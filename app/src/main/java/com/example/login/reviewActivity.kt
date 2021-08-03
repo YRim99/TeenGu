@@ -3,6 +3,7 @@ package com.example.login
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -62,6 +63,7 @@ class reviewActivity : AppCompatActivity() {
             layout_items.orientation = LinearLayout.VERTICAL
             layout_items.setPadding(50,30,50,30)
             layout_items.id = num
+            layout_items.setBackgroundColor(Color.parseColor("#DCDCDC"))
             layout_items.setTag(str_username)
 
             var tvName: TextView = TextView(this)

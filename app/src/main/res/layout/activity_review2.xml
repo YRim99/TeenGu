@@ -71,7 +71,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-            android:textColor="#040404" />
+            android:textColor="#202020" />
 
         <Button
             android:id="@+id/regButton"
@@ -79,6 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginRight="10dp"
+            android:textColor="#202020"
+            android:backgroundTint="#D2CBF33B"
             android:text="등록" />
 
     </LinearLayout>
