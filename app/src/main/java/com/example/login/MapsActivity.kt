@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.*
@@ -32,6 +34,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var sqlitedb: SQLiteDatabase
     lateinit var maps_view: LinearLayout
     lateinit var review : ImageButton
+    lateinit var login_id : String
 
     lateinit var hosName : String
 
@@ -131,9 +134,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         review = findViewById<ImageButton>(R.id.review)
 
         // 아이디 받아오기
-        val id = intent.getStringExtra("intent_userid").toString()
+        val id = intent.getStringExtra("intent_userid")
+        login_id = id.toString()
 
-        review.setOnClickListener{
+        review.setOnClickListener {
             val intent = Intent(this, reviewActivity::class.java)
             intent.putExtra("intent_userid", id)
             intent.putExtra("hosName", hosName)
@@ -141,4 +145,41 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home, menu)
+        return true
+    }
+
+    //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_home ->{
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid",login_id)
+                startActivity(intent)
+
+                return true
+            }
+            //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
+            R.id.action_chat ->{
+                val intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("user_id", login_id)
+                startActivity(intent)
+
+                return true
+            }
+
+            //마이페이지로 이동
+            R.id.action_mypage -> {
+                val intent = Intent(this, MypageActivity::class.java)
+                intent.putExtra("user_id", login_id)
+                startActivity(intent)
+
+                return true
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

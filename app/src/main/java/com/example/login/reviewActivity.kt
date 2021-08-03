@@ -1,9 +1,12 @@
 package com.example.login
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.*
 import com.example.login.DBManager
 import com.example.login.R
@@ -14,6 +17,7 @@ class reviewActivity : AppCompatActivity() {
     lateinit var reviewText : EditText
     lateinit var regButton : Button
     lateinit var review : LinearLayout
+    lateinit var login_id : String
 
     // db 객체 선언 및 연결
     lateinit var dbManager: DBManager
@@ -34,7 +38,8 @@ class reviewActivity : AppCompatActivity() {
         // 병원 이름 받아오기
         val hosName : String? = intent?.getStringExtra("hosName").toString()
         // id 받아오기
-        val id = intent?.getStringExtra("intent_userid").toString()
+        val id = intent?.getStringExtra("intent_userid")
+        login_id = id.toString()
 
         username.text = "$id"
 
@@ -55,13 +60,13 @@ class reviewActivity : AppCompatActivity() {
 
             var layout_items:LinearLayout = LinearLayout(this)
             layout_items.orientation = LinearLayout.VERTICAL
-            layout_items.setPadding(30,20,30,10)
+            layout_items.setPadding(50,30,50,30)
             layout_items.id = num
             layout_items.setTag(str_username)
 
             var tvName: TextView = TextView(this)
             tvName.text = str_username
-            tvName.textSize = 20F
+            tvName.textSize = 17F
             layout_items.addView(tvName)
 
             var tvreview: TextView = TextView(this)
@@ -87,5 +92,43 @@ class reviewActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "후기가 작성되었습니다.", Toast.LENGTH_SHORT).show()
             sqlitedb.close()
         }
+    }
+
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home, menu)
+        return true
+    }
+
+    //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_home ->{
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid",login_id)
+                startActivity(intent)
+
+                return true
+            }
+            //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
+            R.id.action_chat ->{
+                val intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("user_id", login_id)
+                startActivity(intent)
+
+                return true
+            }
+
+            //마이페이지로 이동
+            R.id.action_mypage -> {
+                val intent = Intent(this, MypageActivity::class.java)
+                intent.putExtra("user_id", login_id)
+                startActivity(intent)
+
+                return true
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
