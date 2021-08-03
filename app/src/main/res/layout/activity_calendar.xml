@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.047"
+        android:theme="@style/CalendarViewTheme"/>
 
     <EditText
         android:id="@+id/contentEditText"
@@ -39,7 +40,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_edit_24"
-        app:backgroundTint="#FF9800"
+        app:backgroundTint="#F7BE81"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -75,13 +76,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="2019/01/01"
-                    android:background="#FAFAD2"
+                    android:background="#D8D8D8"
                     />
                 <TextView
                     android:id="@+id/tv_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FAFAD2"
+                    android:background="#D8D8D8"
                     tools:text="D-day"
                     android:textSize="18sp"
                     android:textAlignment="center">

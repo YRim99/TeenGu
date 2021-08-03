@@ -17,6 +17,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="CalendarViewTheme" parent="AppTheme">
+        <item name="colorAccent">@color/teengu</item>
+    </style>
 
     <style name="Theme.Login.NoActionBar">
         <item name="windowActionBar">false</item>
