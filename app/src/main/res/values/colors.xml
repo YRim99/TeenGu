@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="teengu">#A5DF00</color>
     <color name="teengu2">#32CD32</color>
-    <color name="action_bar">#DCDCDC</color>
-    <color name="state_bar">#848484</color>
+    <color name="action_bar">#FBFBEF</color>
+    <color name="state_bar">#FBFBEF</color>
 </resources>
