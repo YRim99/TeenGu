@@ -44,7 +44,8 @@
         <activity android:name=".Button_mycomment" />
         <activity android:name=".Button_mytextinfo" />
         <activity android:name=".Button_mytext" />
-        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatActivity"
+            android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan"/>
         <activity android:name=".MypageActivity" />
         <activity android:name=".WriteActivity" />
         <activity android:name=".Board_marketActivity" />

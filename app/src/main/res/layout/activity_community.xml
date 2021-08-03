@@ -9,38 +9,57 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/people"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="26dp" />
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/people" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="96dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="45dp"
         android:text="커뮤니티"
         android:textColor="#191919"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="44dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="139dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/teengu_bottom"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="게시판"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="즐겨찾는 게시판"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="306dp"
-        android:layout_height="404dp"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="182dp">
+        android:layout_width="371dp"
+        android:layout_height="425dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ListView
             android:id="@+id/boardlistView"

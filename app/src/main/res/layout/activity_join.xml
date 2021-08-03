@@ -15,6 +15,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="332dp"
         android:text="아이디"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/join_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,6 +40,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="319dp"
         android:text="비밀번호"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/join_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,6 +68,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="345dp"
         android:text="별명"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/join_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -93,6 +96,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="345dp"
         android:text="나이"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/join_age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,6 +124,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="332dp"
         android:text="이메일"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/join_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -149,7 +154,9 @@
         android:layout_marginEnd="64dp"
         android:text="검증"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#D2CBF33B"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -159,6 +166,8 @@
         android:text="가입신청"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:backgroundTint="#D2CBF33B"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
