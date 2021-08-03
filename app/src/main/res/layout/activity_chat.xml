@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/lv_chating"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="487dp"
         android:layout_above="@+id/layout"
         android:layout_marginBottom="60dp"
         android:transcriptMode="alwaysScroll" />
@@ -21,21 +21,48 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-60dp"
         android:background="#FDFCFC"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/et_msg"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="메세지 입력"
-            android:textColor="#ff000000"/>
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="113dp"
+            android:layout_height="35dp"
+            android:src="@drawable/teengu_bottom"/>
+        <ImageView
+            android:layout_width="113dp"
+            android:layout_height="35dp"
+            android:src="@drawable/teengu_bottom"/>
+            <ImageView
+                android:layout_width="113dp"
+                android:layout_height="35dp"
+                android:src="@drawable/teengu_bottom"/>
+            <ImageView
+                android:layout_width="113dp"
+                android:layout_height="35dp"
+                android:src="@drawable/teengu_bottom"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/btn_send"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_send_24"
-            android:text="send" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_msg"
+                android:layout_width="349dp"
+                android:layout_height="86dp"
+                android:hint="메세지 입력"
+                android:textColor="#ff000000" />
+
+            <ImageButton
+                android:id="@+id/btn_send"
+                android:layout_width="59dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_send_24"
+                android:text="send" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

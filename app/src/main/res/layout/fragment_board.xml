@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자유게시판"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:text="자유롭게 글을 써봐요."
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="질문게시판"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:text="궁금한 것은 무엇이든 물어보세요."
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="플리마켓"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:text="안 쓰는 물건들을 저렴하게 나눠요."
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="홍보게시판"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:text="유용한 정보를 공유해요."
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 </LinearLayout>
