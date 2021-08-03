@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teengu"
+    android:background="#D2CBF33B"
     android:orientation="vertical"
     tools:context=".ChatActivity">
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="메세지 입력"
-            android:textColor="#ff000000" />
+            android:textColor="#ff000000"/>
 
         <ImageButton
             android:id="@+id/btn_send"
