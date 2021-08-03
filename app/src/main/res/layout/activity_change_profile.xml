@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Change_Profile">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="100dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:text="아이디"
+                android:paddingStart="50dp"/>
+            <TextView
+                android:text="( 아이디 들어오는 장소 )"
+                android:layout_gravity="center"
+                android:id="@+id/id"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="비밀번호"
+                android:paddingStart="41dp"/>
+
+            <EditText
+                android:id="@+id/new_pwd"
+                android:hint="새로운 비밀번호를 입력해주세요"
+                android:paddingStart="25dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/change_pwd"
+                android:layout_marginLeft="5dp"
+                android:text="확인" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:text="별명"
+                android:paddingStart="65dp"/>
+            <EditText
+                android:id="@+id/new_nickname"
+                android:hint="새로운 별명을 입력해주세요"
+                android:paddingStart="25dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/change_nickname"
+                android:layout_marginLeft="5dp"
+                android:text="확인" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:text="나이"
+                android:paddingStart="65dp"/>
+            <TextView
+                android:text="( 나이 )"
+                android:layout_gravity="center"
+                android:id="@+id/age"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:text="이메일"
+                android:paddingStart="55dp"/>
+            <TextView
+                android:text="( 이메일 )"
+                android:layout_gravity="center"
+                android:id="@+id/email"/>
+        </TableRow>
+
+        <Button
+            android:id="@+id/change_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:text="완료" />
+    </TableLayout>
+
+
+
+
+</LinearLayout>

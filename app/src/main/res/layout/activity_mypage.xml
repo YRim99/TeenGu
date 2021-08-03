@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Imageview_Main_Myprofile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="37dp"
+        android:src="@drawable/teengu"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="523dp"
+        android:textSize="24sp"
+        android:text="textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Imageview_Main_Myprofile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/mypost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/button_round2"
+        app:layout_constraintEnd_toStartOf="@+id/mycomment"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Imageview_Main_Myprofile"
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/mycomment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="132dp"
+        android:background="@drawable/button_round2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_string"
+        app:srcCompat="@drawable/ic_baseline_comment_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="1dp"
+        android:text="내가 쓴 글"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mypost"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="133dp"
+        android:text="댓글 단 글"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/mycomment"
+        tools:ignore="MissingConstraints" />
+
+    <TableLayout
+        android:layout_width="409dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:text="계정" />
+        </TableRow>
+        <TableRow
+            android:layout_height="10dp"
+            android:background="@color/black"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp">
+
+            <TextView
+                android:id="@+id/profile_change"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="7dp"
+                android:text="프로필 변경" />
+        </TableRow>
+        <TableRow
+            android:layout_height="10dp"
+            android:background="@color/black"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp">
+
+            <TextView
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="7dp"
+                android:text="회원 탈퇴" />
+        </TableRow>
+        <TableRow
+            android:layout_height="10dp"
+            android:background="@color/black"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp">
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="7dp"
+                android:text="로그아웃" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:text="정보" />
+        </TableRow>
+        <TableRow
+            android:layout_height="10dp"
+            android:background="@color/black"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp">
+
+            <TextView
+                android:id="@+id/infosec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="7dp"
+                android:text="개인정보처리방침" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="10dp"
+            android:background="@color/black"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp">
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="7dp"
+                android:text="버전정보" />
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
