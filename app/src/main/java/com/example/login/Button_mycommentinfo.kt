@@ -23,6 +23,7 @@ class Button_mycommentinfo : AppCompatActivity() {
         setContentView(R.layout.activity_button_mycommentinfo)
 
         btn_reply_title = findViewById(R.id.btn_reply_title)
+        btn_reply_content = findViewById(R.id.btn_reply_content)
 
         var comment_title = intent.getStringExtra("intent_text_title")
         var board_title = intent.getStringExtra("intent_board_title")
@@ -32,7 +33,7 @@ class Button_mycommentinfo : AppCompatActivity() {
         sqlDB = communityDBHelper.readableDatabase
 
         var cursor : Cursor
-        cursor = sqlDB.rawQuery("SELECT * FROM"+ board_title+" where board_title='"+comment_title+"';", null)
+        cursor = sqlDB.rawQuery("SELECT * FROM "+ board_title+" where board_title='"+comment_title+"';", null)
 
         var num : Int = 0
         while(cursor.moveToNext()) {
