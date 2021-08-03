@@ -2,6 +2,7 @@ package com.example.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -40,6 +41,13 @@ class teenguInfo : AppCompatActivity()  {
             tab.text = tabTitles[position]
         }.attach()
     }
+
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home, menu)
+        return true
+    }
+
     //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
