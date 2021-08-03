@@ -11,4 +11,5 @@
     <color name="teengu2">#32CD32</color>
     <color name="action_bar">#FBFBEF</color>
     <color name="state_bar">#FBFBEF</color>
+    <color name="border_color">#6E6E6E</color>
 </resources>
