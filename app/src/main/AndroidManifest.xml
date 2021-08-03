@@ -19,7 +19,6 @@
             android:name=".reviewActivity"
             android:parentActivityName=".MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_review"
             android:theme="@style/Theme.Login.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
