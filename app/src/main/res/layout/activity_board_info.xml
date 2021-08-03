@@ -34,5 +34,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:icon="@android:drawable/ic_menu_edit" />
+        app:icon="@android:drawable/ic_menu_edit"
+        android:backgroundTint="@color/basic"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

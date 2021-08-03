@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.marginLeft
 
 class Board_infoActivity : AppCompatActivity() {
     lateinit var myHelper: communityDBHelper //communityDBHelper 클래스 변수
