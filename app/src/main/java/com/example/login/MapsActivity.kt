@@ -1,36 +1,25 @@
 package com.example.login
 
 import android.content.Intent
-import android.annotation.SuppressLint
-import android.content.pm.ActivityInfo
-import android.content.pm.PackageManager
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.*
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.example.login.review
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import org.jetbrains.anko.makeCall
-import org.jetbrains.anko.startActivity //anko 라이브러리 사용
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.singleTop
+import org.jetbrains.anko.startActivity
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -42,31 +31,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
     lateinit var maps_view: LinearLayout
-    lateinit var review : Button
+    lateinit var review : ImageButton
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
-        // 어플이 사용되는 동안 화면 끄지 않기
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-
-        //시작하면 세부 화면은 안 보이게
-        maps_view = findViewById(R.id.maps_view)
-        maps_view.visibility = View.GONE
-
-    }
+    lateinit var hosName : String
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         dbManager = DBManager(this, "map", null, 1)
         sqlitedb = dbManager.readableDatabase
         maps_view = findViewById(R.id.maps_view)
-
 
         var cursor: Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM Nowon;", null)
@@ -107,28 +80,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onMarkerClick(marker: Marker): Boolean {
                 maps_view.visibility = View.VISIBLE
                 var str_name = findViewById<TextView>(R.id.name)
-
                 var str_field = findViewById<TextView>(R.id.field)
                 var str_location = findViewById<TextView>(R.id.location)
                 var call = findViewById<ImageButton>(R.id.call)
-                review = findViewById(R.id.review)
+                //var review = findViewById<ImageButton>(R.id.review)
 
                 var arr = marker.tag.toString().split("/") //마커에 붙인 태그
                 str_name.text = marker.title
+                hosName = marker.title
                 str_field.text = marker.snippet
                 str_location.text = arr[0]
                 var str_call : String = arr[1]
-
-                // 아이디 받아오기
-                val intent_userid = intent.getStringExtra("intent_userid")
-
-                review.setOnClickListener{
-                    // anko
-                    startActivity<review>(
-                        "$str_name" to "hosName",
-                        "$intent_userid" to "intent_userid"
-                    )
-                }
 
                 call.setOnClickListener {
                     var intent = Intent(Intent.ACTION_DIAL)
@@ -137,8 +99,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         startActivity(intent)
                     }
                 }
-
-
 
                 return false
             }
@@ -152,4 +112,33 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         })
 
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_maps)
+        setTitle("산부인과 지도")
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+        // 어플이 사용되는 동안 화면 끄지 않기
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
+        //시작하면 세부 화면은 안 보이게
+        maps_view = findViewById(R.id.maps_view)
+        maps_view.visibility = View.GONE
+        review = findViewById<ImageButton>(R.id.review)
+
+        // 아이디 받아오기
+        val id = intent.getStringExtra("intent_userid").toString()
+
+        review.setOnClickListener{
+            val intent = Intent(this, reviewActivity::class.java)
+            intent.putExtra("intent_userid", id)
+            intent.putExtra("hosName", hosName)
+            startActivity(intent)
+        }
+    }
+
 }
