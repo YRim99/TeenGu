@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/Imageview_Main_Myprofile"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/teengu"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/welcome_string"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,15 +24,15 @@
         android:id="@+id/welcome_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="61dp"
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="523dp"
-        android:textSize="24sp"
         android:text="textView"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/Imageview_Main_Myprofile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -40,16 +41,15 @@
         android:id="@+id/mypost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="29dp"
         android:background="@drawable/button_round2"
         app:layout_constraintEnd_toStartOf="@+id/mycomment"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Imageview_Main_Myprofile"
         app:srcCompat="@drawable/ic_baseline_edit_24"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/mycomment"
@@ -89,15 +89,16 @@
         app:layout_constraintTop_toBottomOf="@+id/mycomment"
         tools:ignore="MissingConstraints" />
 
+
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="409dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -105,14 +106,15 @@
 
             <TextView
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                android:text="계정" />
+                android:text="계정"
+                android:textStyle="bold" />
         </TableRow>
+
         <TableRow
             android:layout_height="10dp"
-            android:background="@color/black"
+            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
+            android:background="@color/teengu">
 
             <TextView
                 android:id="@+id/profile_change"
@@ -124,11 +126,12 @@
                 android:padding="7dp"
                 android:text="프로필 변경" />
         </TableRow>
+
         <TableRow
             android:layout_height="10dp"
-            android:background="@color/black"
+            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
+            android:background="@color/teengu">
 
             <TextView
                 android:id="@+id/exit"
@@ -142,11 +145,12 @@
                 android:padding="7dp"
                 android:text="회원 탈퇴" />
         </TableRow>
+
         <TableRow
             android:layout_height="10dp"
-            android:background="@color/black"
+            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
+            android:background="@color/teengu">
 
             <TextView
                 android:id="@+id/logout"
@@ -165,14 +169,16 @@
 
             <TextView
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                android:text="정보" />
+                android:layout_marginTop="20dp"
+                android:text="정보"
+                android:textStyle="bold" />
         </TableRow>
+
         <TableRow
             android:layout_height="10dp"
-            android:background="@color/black"
+            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
+            android:background="@color/teengu">
 
             <TextView
                 android:id="@+id/infosec"
@@ -185,11 +191,12 @@
                 android:text="개인정보처리방침" />
 
         </TableRow>
+
         <TableRow
             android:layout_height="10dp"
-            android:background="@color/black"
+            android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
+            android:background="@color/teengu">
 
             <TextView
                 android:id="@+id/version"
@@ -205,9 +212,18 @@
         </TableRow>
 
 
-
     </TableLayout>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:srcCompat="@drawable/teengu_bottom" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
