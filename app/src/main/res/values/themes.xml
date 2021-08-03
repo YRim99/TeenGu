@@ -17,7 +17,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="CalendarViewTheme" parent="AppTheme">
+    <style name="CalendarViewTheme" parent="Theme.Login">
         <item name="colorAccent">@color/teengu</item>
     </style>
 
