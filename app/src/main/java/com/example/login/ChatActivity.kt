@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import java.util.*
@@ -15,7 +12,7 @@ import kotlin.collections.HashMap
 
 
 class ChatActivity: AppCompatActivity() {
-    lateinit var btn_send : Button
+    lateinit var btn_send : ImageButton
     lateinit var et_msg : EditText
     lateinit var lv_chating : ListView
 
@@ -33,7 +30,7 @@ class ChatActivity: AppCompatActivity() {
         setContentView(R.layout.activity_chat)
 
         lv_chating = findViewById<ListView>(R.id.lv_chating)
-        btn_send = findViewById<Button>(R.id.btn_send)
+        btn_send = findViewById<ImageButton>(R.id.btn_send)
         et_msg = findViewById<EditText>(R.id.et_msg)
 
         login_id = intent.getStringExtra("login_id").toString()
