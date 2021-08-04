@@ -27,6 +27,9 @@ class MypageActivity : AppCompatActivity() {
         mypost = findViewById(R.id.mypost)
         mycomment = findViewById(R.id.mycomment)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //'**님 안녕하세요'
         val id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
@@ -144,6 +147,11 @@ class MypageActivity : AppCompatActivity() {
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
         }

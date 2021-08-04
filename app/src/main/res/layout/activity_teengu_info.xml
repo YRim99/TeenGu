@@ -8,7 +8,6 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
-        android:background="@color/loading_color"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +15,13 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="1">
+        app:layout_constraintWidth_percent="1"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#ffff00"
+        app:tabTextColor="@color/black"
+        android:background="@color/white"
+        app:tabBackground="@color/loading_color">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
