@@ -9,34 +9,31 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 
 class Button_mycomment : AppCompatActivity() {
 
     lateinit var sqlDB : SQLiteDatabase //SQLiteDatabase 클래스 변수
     lateinit var communityDBHelper: communityDBHelper
     lateinit var replyDBHelper: replyDBHelper
-    lateinit var myDBHelper: myDBHelper
     lateinit var layout: LinearLayout
-
-    lateinit var text_writer : String
     lateinit var login_id : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_mycomment)
+        setTitle("댓글 남긴 글 목록")
 
         val intent = intent
-        text_writer = intent.getStringExtra("text_writer").toString()
+        var intent_userid = intent.getStringExtra("intent_userid").toString()
+        Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
         layout = findViewById(R.id.personnel_reply)
 
         replyDBHelper = replyDBHelper(this)
         sqlDB = replyDBHelper.readableDatabase
 
-        val id = intent.getStringExtra("intent_userid")
-        login_id = id.toString()
-
         var cursor : Cursor
-        cursor = sqlDB.rawQuery("SELECT * FROM table_reply where userid='"+text_writer+"';", null)
+        cursor = sqlDB.rawQuery("SELECT * FROM table_reply where userid='"+intent_userid+"';", null)
 
         var num : Int = 0
         while(cursor.moveToNext()){
@@ -64,14 +61,23 @@ class Button_mycomment : AppCompatActivity() {
 
             var boardname : TextView = TextView(this)
             boardname.textSize = 11f
-            boardname.text = reply_board_title
+            if(reply_board_title == "table_board_info"){
+                boardname.text = "자유게시판"
+            } else if(reply_board_title == "table_board_qa"){
+                boardname.text = "질문게시판"
+            } else if(reply_board_title == "table_board_market"){
+                boardname.text = "플리마켓"
+            } else{
+                boardname.text = "홍보게시판"
+            }
+
             layout_item.addView(boardname)
 
             layout_item.setOnClickListener {
                 val intent = Intent(this, Button_mycommentinfo::class.java)
-                intent.putExtra("intent_text_title", reply_texttitle)
-                intent.putExtra("intent_reply_content", reply_content)
-                intent.putExtra("intent_board_title", reply_board_title)
+                intent.putExtra("intent_userid", intent_userid)
+                intent.putExtra("title",reply_texttitle)
+                intent.putExtra("content", reply_content)
                 startActivity(intent)
             }
 
