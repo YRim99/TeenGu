@@ -16,9 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".reviewActivity"
-            android:parentActivityName=".MapsActivity"
             android:exported="true"
+            android:parentActivityName=".MapsActivity"
             android:theme="@style/Theme.Login.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -47,8 +56,9 @@
         <activity android:name=".Button_mycomment" />
         <activity android:name=".Button_mytextinfo" />
         <activity android:name=".Button_mytext" />
-        <activity android:name=".ChatActivity"
-            android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan"/>
+        <activity
+            android:name=".ChatActivity"
+            android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan" />
         <activity android:name=".MypageActivity" />
         <activity android:name=".WriteActivity" />
         <activity android:name=".Board_marketActivity" />
@@ -58,13 +68,7 @@
         <activity android:name=".CommunityActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

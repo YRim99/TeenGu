@@ -19,7 +19,7 @@
         android:textColor="#000000"
         android:textSize="50px"
         android:textStyle="bold"
-        app:backgroundTint="#D2CBF33B"
+        app:backgroundTint="@color/loading_color"
         app:layout_constraintBottom_toTopOf="@+id/btnHostpital"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -57,7 +57,7 @@
         android:textColor="#000000"
         android:textSize="50px"
         android:textStyle="bold"
-        app:backgroundTint="#77573BF3"
+        app:backgroundTint="#34573BF3"
         app:layout_constraintBottom_toTopOf="@+id/grantDesBanner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,7 +75,7 @@
         android:textColor="#000000"
         android:textSize="50px"
         android:textStyle="bold"
-        app:backgroundTint="#683BE4F3"
+        app:backgroundTint="#483BE4F3"
         app:layout_constraintBottom_toTopOf="@+id/btnCalendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

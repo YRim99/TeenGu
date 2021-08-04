@@ -21,6 +21,10 @@
         <item name="colorAccent">@color/teengu</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/activity_splash</item>
+    </style>
+
     <style name="Theme.Login.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

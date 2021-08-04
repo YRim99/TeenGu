@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/border"
-    android:backgroundTint="@color/basic2">
+    android:backgroundTint="@color/loading_color">
 
 
     <LinearLayout
