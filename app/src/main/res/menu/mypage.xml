@@ -10,13 +10,13 @@
         -->
     <item
         android:id="@+id/action_chat"
-        android:icon="@drawable/chat"
+        android:icon="@drawable/ic_baseline_chat_24"
         android:title="Chat"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/home"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
         app:showAsAction="always" />
 </menu>

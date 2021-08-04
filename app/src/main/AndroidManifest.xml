@@ -59,7 +59,8 @@
             android:name=".ChatActivity"
             android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan" />
         <activity android:name=".MypageActivity" />
-        <activity android:name=".WriteActivity" />
+        <activity android:name=".WriteActivity"
+            android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan"/>
         <activity android:name=".Board_marketActivity" />
         <activity android:name=".Board_adActivity" />
         <activity android:name=".Board_qaActivity" />
