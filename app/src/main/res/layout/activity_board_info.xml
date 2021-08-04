@@ -35,5 +35,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:icon="@android:drawable/ic_menu_edit"
-        android:backgroundTint="@color/basic"/>
+        android:backgroundTint="@color/loading_color"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
