@@ -110,7 +110,7 @@ class reviewActivity : AppCompatActivity() {
                 return true
             }
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
-            R.id.action_back ->{
+            R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
