@@ -42,7 +42,6 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"
             android:parentActivityName=".HomeActivity" />
         <activity android:name=".teenguInfo" />
         <activity android:name=".CalendarActivity" />
