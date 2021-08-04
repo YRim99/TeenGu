@@ -14,6 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.marginLeft
+import androidx.core.view.marginBottom as marginBottom
 
 class Board_infoActivity : AppCompatActivity() {
     lateinit var myHelper: communityDBHelper //communityDBHelper 클래스 변수
@@ -57,7 +58,6 @@ class Board_infoActivity : AppCompatActivity() {
             save_content.text = strcontent
             save_content.maxLines = 1
             save_content.ellipsize = TextUtils.TruncateAt.END
-
             layout_item.addView(save_content)
 
 
