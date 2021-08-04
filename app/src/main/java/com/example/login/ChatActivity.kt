@@ -2,6 +2,7 @@ package com.example.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
@@ -99,6 +100,13 @@ class ChatActivity: AppCompatActivity() {
 
         arrayAdapter.notifyDataSetChanged()
     }
+
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mychat, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.action_home ->{

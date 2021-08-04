@@ -5,6 +5,7 @@ import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
 import android.widget.TextView
@@ -125,6 +126,12 @@ class MypageActivity : AppCompatActivity() {
         }
     }
 
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mypage, menu)
+        return true
+    }
+
     //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
@@ -135,6 +142,7 @@ class MypageActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
+
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
