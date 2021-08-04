@@ -66,6 +66,7 @@ class reviewActivity : AppCompatActivity() {
             var tvName: TextView = TextView(this)
             tvName.text = str_username
             tvName.textSize = 17F
+            tvName.setTextColor(Color.BLACK)
             layout_items.addView(tvName)
 
             var tvreview: TextView = TextView(this)

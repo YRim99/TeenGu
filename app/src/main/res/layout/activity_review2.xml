@@ -27,15 +27,14 @@
             <TextView
                 android:id="@+id/reviewTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
                 android:textColor="#040404"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:text="후기"
-                android:foregroundTint="#BF926B"/>
+                android:background="@color/loading_color"/>
 
         </LinearLayout>
     </ScrollView>
@@ -80,7 +79,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginRight="10dp"
             android:textColor="#202020"
-            android:backgroundTint="#D2CBF33B"
+            android:backgroundTint="@color/loading_color"
             android:text="등록" />
 
     </LinearLayout>

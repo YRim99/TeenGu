@@ -33,7 +33,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var login_id : String
 
     lateinit var hosName : String
-    lateinit var toolbar : Toolbar
+    //lateinit var toolbar : Toolbar
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -125,7 +125,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //setSupportActionBar(toolbar)
 
         // 뒤로가기 버튼
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // 어플이 사용되는 동안 화면 끄지 않기
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
