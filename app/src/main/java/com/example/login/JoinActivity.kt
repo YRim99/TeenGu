@@ -2,6 +2,7 @@ package com.example.login
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.util.Log
@@ -35,6 +36,22 @@ class JoinActivity : AppCompatActivity() {
         btnCheck = findViewById(R.id.btnCheck)
         btnRegister = findViewById(R.id.btnRegister)
         myHelper = myDBHelper(this)
+
+        btnCheck.setOnClickListener { //아이디 중복확인
+            sqlDB = myHelper.readableDatabase
+            var cursor: Cursor = sqlDB.rawQuery("SELECT memID from memberDB where memID='"+ join_id?.text.toString()+"';", null)
+
+            cursor.moveToFirst();
+            if (cursor.count > 0) {
+                Toast.makeText(applicationContext, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show()
+                join_id?.setText("")
+            } else {
+                Toast.makeText(applicationContext, "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show()
+            }
+
+            cursor.close()
+            sqlDB.close()
+        }
 
 
         btnRegister.setOnClickListener { //가입신청 버튼을 클릭
