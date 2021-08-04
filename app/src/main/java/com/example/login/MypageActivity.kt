@@ -30,7 +30,7 @@ class MypageActivity : AppCompatActivity() {
         mycomment = findViewById(R.id.mycomment)
 
         //'**님 안녕하세요'
-        var id = intent.getStringExtra("user_id")
+        var id = intent.getStringExtra("intent_userid")
 
         writer = id.toString()
         login_id = writer
@@ -138,7 +138,7 @@ class MypageActivity : AppCompatActivity() {
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -148,7 +148,7 @@ class MypageActivity : AppCompatActivity() {
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
 
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true

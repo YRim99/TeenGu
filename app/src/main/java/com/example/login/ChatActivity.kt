@@ -33,16 +33,15 @@ class ChatActivity: AppCompatActivity() {
         btn_send = findViewById<ImageButton>(R.id.btn_send)
         et_msg = findViewById<EditText>(R.id.et_msg)
 
-        login_id = intent.getStringExtra("login_id").toString()
+        login_id = intent.getStringExtra("intent_userid").toString()
+        Toast.makeText(this, login_id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
 
         arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1)
         lv_chating.adapter = arrayAdapter
 
         lv_chating.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL)
 
-
-        str_name= "Guest " + Random().nextInt(1000)
-
+        str_name = login_id
 
         btn_send.setOnClickListener(View.OnClickListener {
             //map을 사용해 name과 메시지 가져오고 key에 값 요청
@@ -104,22 +103,17 @@ class ChatActivity: AppCompatActivity() {
         when(item?.itemId){
             R.id.action_home ->{
                 val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
-            }
-        }
-        when(item?.itemId){
-            R.id.action_mypage -> {
-                val intent = Intent(this,MypageActivity::class.java )
-                startActivity(intent)
             }
 
             //마이페이지로 이동
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
 
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -127,6 +121,4 @@ class ChatActivity: AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
 }

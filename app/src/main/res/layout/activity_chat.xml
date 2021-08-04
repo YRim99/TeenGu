@@ -31,10 +31,10 @@
             android:layout_width="113dp"
             android:layout_height="35dp"
             android:src="@drawable/teengu_bottom"/>
-        <ImageView
-            android:layout_width="113dp"
-            android:layout_height="35dp"
-            android:src="@drawable/teengu_bottom"/>
+            <ImageView
+               android:layout_width="113dp"
+               android:layout_height="35dp"
+               android:src="@drawable/teengu_bottom"/>
             <ImageView
                 android:layout_width="113dp"
                 android:layout_height="35dp"

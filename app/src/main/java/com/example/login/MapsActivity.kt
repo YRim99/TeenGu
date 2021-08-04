@@ -166,7 +166,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_back ->{
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -175,7 +175,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             //마이페이지로 이동
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
