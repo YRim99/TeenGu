@@ -10,17 +10,18 @@
         -->
     <item
         android:id="@+id/action_chat"
-        android:icon="@drawable/chat"
+        android:icon="@drawable/ic_baseline_chat_24"
         android:title="Chat"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_mypage"
-        android:icon="@drawable/mypage"
+        android:icon="@drawable/ic_baseline_person_pin_24"
         android:title="Mypage"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/home"
         android:title="Home"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
 </menu>

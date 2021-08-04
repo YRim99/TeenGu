@@ -3,13 +3,16 @@ package com.example.login
 import android.content.DialogInterface
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+
 
 class JoinActivity : AppCompatActivity() {
     val TAG : String = "Join"
@@ -18,6 +21,7 @@ class JoinActivity : AppCompatActivity() {
     lateinit var btnCheck : Button
     lateinit var btnRegister : Button
     lateinit var sqlDB : SQLiteDatabase //SQLiteDatabase 클래스 변수
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +35,7 @@ class JoinActivity : AppCompatActivity() {
         btnCheck = findViewById(R.id.btnCheck)
         btnRegister = findViewById(R.id.btnRegister)
         myHelper = myDBHelper(this)
+
 
         btnRegister.setOnClickListener { //가입신청 버튼을 클릭
             val id = join_id?.text.toString()
@@ -70,6 +75,18 @@ class JoinActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            R.id.home -> {
+                //toolbar의 back키 눌렀을 때 동작
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     // 회원가입 실패시 다이얼로그를 띄워주는 메소드
