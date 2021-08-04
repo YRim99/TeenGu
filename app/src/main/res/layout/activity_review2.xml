@@ -80,7 +80,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginRight="10dp"
             android:textColor="#202020"
-            android:backgroundTint="#D2CBF33B"
+            android:backgroundTint="@color/loading_color"
             android:text="등록" />
 
     </LinearLayout>

@@ -13,12 +13,23 @@
         <!-- Status bar & text color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyToolbarStyle">
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="android:background">?colorPrimary</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/MyToolbarTheme</item>
+    </style>
+
+    <style name="MyToolbarTheme">
+        <!-- Used to tint the back arrow, menu and spinner arrow -->
+        <item name="colorControlNormal">@color/loading_color</item>
+    </style>
+
     <style name="CalendarViewTheme" parent="Theme.Login">
-        <item name="colorAccent">@color/teengu</item>
+        <item name="colorAccent">@color/loading_color</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
