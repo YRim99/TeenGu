@@ -132,7 +132,7 @@
             android:layout_height="10dp"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:background="@color/teengu">
+            android:background="@color/loading_color">
 
             <TextView
                 android:id="@+id/exit"
@@ -151,7 +151,7 @@
             android:layout_height="10dp"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:background="@color/teengu">
+            android:background="@color/loading_color">
 
             <TextView
                 android:id="@+id/logout"
@@ -180,7 +180,7 @@
             android:layout_height="10dp"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:background="@color/teengu">
+            android:background="@color/loading_color">
 
             <TextView
                 android:id="@+id/infosec"
@@ -198,7 +198,7 @@
             android:layout_height="10dp"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
-            android:background="@color/teengu">
+            android:background="@color/loading_color">
 
             <TextView
                 android:id="@+id/version"
