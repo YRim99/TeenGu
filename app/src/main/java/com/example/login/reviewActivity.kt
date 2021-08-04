@@ -25,7 +25,6 @@ class reviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review2)
-        //setTitle("산부인과 지도")
 
         dbManager = DBManager(this, "map", null, 1)
 
