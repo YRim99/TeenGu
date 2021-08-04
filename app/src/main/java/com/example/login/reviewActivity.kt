@@ -9,8 +9,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
-import com.example.login.DBManager
-import com.example.login.R
 
 class reviewActivity : AppCompatActivity() {
 
@@ -27,7 +25,7 @@ class reviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review2)
-        setTitle("산부인과 지도")
+        //setTitle("산부인과 지도")
 
         dbManager = DBManager(this, "map", null, 1)
 
@@ -113,7 +111,7 @@ class reviewActivity : AppCompatActivity() {
                 return true
             }
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
-            R.id.action_chat ->{
+            R.id.action_back ->{
                 val intent = Intent(this, ChatActivity::class.java)
                 intent.putExtra("user_id", login_id)
                 startActivity(intent)

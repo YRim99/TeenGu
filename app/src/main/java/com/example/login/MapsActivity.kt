@@ -115,11 +115,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-        setTitle("산부인과 지도")
+        //setTitle("산부인과 지도")
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // 어플이 사용되는 동안 화면 끄지 않기
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -150,6 +153,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
+            R.id.action_back -> {
+                super.onBackPressed()
+            }
             R.id.action_home ->{
                 val intent = Intent(this, HomeActivity::class.java)
                 intent.putExtra("intent_userid",login_id)
@@ -158,7 +164,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 return true
             }
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
-            R.id.action_chat ->{
+            R.id.action_back ->{
                 val intent = Intent(this, ChatActivity::class.java)
                 intent.putExtra("user_id", login_id)
                 startActivity(intent)
