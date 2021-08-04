@@ -48,7 +48,6 @@ class Button_mycomment : AppCompatActivity() {
             var layout_item : LinearLayout = LinearLayout(this)
             layout_item.orientation = LinearLayout.VERTICAL
             layout_item.setPadding(50,30,50,30)
-            layout_item.setPadding(50,30,50,30)
             layout_item.setBackgroundColor(Color.parseColor("#DCDCDC"))
             layout_item.id = num
 
