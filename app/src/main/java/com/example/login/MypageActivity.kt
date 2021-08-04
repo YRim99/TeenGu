@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog

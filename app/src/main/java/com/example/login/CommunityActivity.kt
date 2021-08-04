@@ -1,15 +1,11 @@
 package com.example.login
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.Toast
 
 class CommunityActivity : AppCompatActivity() {
