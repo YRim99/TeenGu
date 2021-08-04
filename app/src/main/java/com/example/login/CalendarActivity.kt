@@ -129,9 +129,8 @@ class CalendarActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_home ->{
-                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("intent_userid",id)
+                intent.putExtra("intent_userid",login_id)
                 startActivity(intent)
                 return true
             }

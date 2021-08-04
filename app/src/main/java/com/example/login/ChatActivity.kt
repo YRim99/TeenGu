@@ -120,7 +120,6 @@ class ChatActivity: AppCompatActivity() {
             //마이페이지로 이동
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
-
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 

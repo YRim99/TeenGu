@@ -16,6 +16,7 @@ class BoardViewActivity : AppCompatActivity() {
     lateinit var myHelper: replyDBHelper
     lateinit var sqlDB: SQLiteDatabase //SQLiteDatabase 클래스 변수
     lateinit var reply_reg : ImageButton
+    lateinit var id : TextView //글쓴이 아이디
     lateinit var title : TextView //게시글 제목
     lateinit var content : TextView //게시글 내용
     lateinit var layout : LinearLayout //댓글 목록
@@ -25,6 +26,7 @@ class BoardViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_view)
 
+        id = findViewById(R.id.id)
         title = findViewById(R.id.title)
         content = findViewById(R.id.content)
         reply = findViewById(R.id.replyEdit)
@@ -37,6 +39,7 @@ class BoardViewActivity : AppCompatActivity() {
 
 
         //게시글 보여주기
+        id.text = intent_userid
         title.text = intent_title
         content.text = intent_content
 

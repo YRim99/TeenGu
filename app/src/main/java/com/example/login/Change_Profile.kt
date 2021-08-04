@@ -32,7 +32,7 @@ class Change_Profile : AppCompatActivity() {
         new_pwd = findViewById(R.id.new_pwd)
         new_nickname = findViewById(R.id.new_nickname)
 
-        var id = intent.getStringExtra("id")   //현재 id값 받아오기 위해 필요
+        var id = intent.getStringExtra("intent_userid")   //현재 id값 받아오기 위해 필요
 
         myHelper = myDBHelper(this)
         sqlDB = myHelper.readableDatabase
@@ -77,6 +77,7 @@ class Change_Profile : AppCompatActivity() {
         change_finish.setOnClickListener {
             Toast.makeText(applicationContext, "회원정보 변경이 완료되어 로그인 페이지로 이동합니다.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("intent_userid", id)
             startActivity(intent)
         }
 

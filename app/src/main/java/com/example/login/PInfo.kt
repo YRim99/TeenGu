@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.TextView
 import java.io.BufferedReader
 import java.io.File
-import java.io.FileReader
 
 class PInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

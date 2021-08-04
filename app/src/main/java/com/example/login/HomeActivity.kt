@@ -26,9 +26,6 @@ class HomeActivity : AppCompatActivity() {
         var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
 
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
-
-
         btnCommunity = findViewById(R.id.btnCommunity)
         btnInformation = findViewById(R.id.btnInfomation)
         btnHospital = findViewById(R.id.btnHostpital)

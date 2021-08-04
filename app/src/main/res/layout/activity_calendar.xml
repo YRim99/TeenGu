@@ -65,29 +65,28 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <TextView
-                    android:id="@+id/tv_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="2019/01/01"
-                    android:background="#D8D8D8"
-                    />
-                <TextView
-                    android:id="@+id/tv_result"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#D8D8D8"
-                    tools:text="D-day"
-                    android:textSize="18sp"
-                    android:textAlignment="center">
 
-                </TextView>
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="2019/01/01"
+                        android:background="@drawable/calendar_border"/>
+                    <TextView
+                        android:id="@+id/tv_result"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="D-day"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/calendar_border">
+                    </TextView>
 
                 <TextView
                     android:id="@+id/tv_diary"
@@ -100,7 +99,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/calendar_border"/>
+                    android:background="@drawable/calendar_border2"/>
 
             </LinearLayout>
         </RelativeLayout>

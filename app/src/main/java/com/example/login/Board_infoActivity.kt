@@ -3,6 +3,7 @@ package com.example.login
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -44,10 +45,12 @@ class Board_infoActivity : AppCompatActivity() {
             layout_item.orientation = LinearLayout.VERTICAL
             layout_item.setPadding(20,10,20,10)
             layout_item.id = num
+            layout_item.setBackgroundColor(Color.parseColor("#DCDCDC"))
 
             var save_title : TextView = TextView(this)
             save_title.textSize = 25F
             save_title.text = strtitle
+            save_title.setTextColor(Color.BLACK)
             layout_item.addView(save_title)
 
             var save_content : TextView = TextView(this)
@@ -95,9 +98,8 @@ class Board_infoActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.action_home ->{
-                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("intent_userid",id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
                 return true
             }

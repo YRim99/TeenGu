@@ -156,13 +156,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
-            /*
-            //우측 상단 뒤로가기 메뉴 누를시 이전페이지로 이동
-            //R.id.action_back -> {
-             //   super.onBackPressed()
-            //}
 
-             */
+
             //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
             R.id.action_home ->{
                 val intent = Intent(this, HomeActivity::class.java)

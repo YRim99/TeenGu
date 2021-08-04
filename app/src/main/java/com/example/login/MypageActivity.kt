@@ -18,8 +18,6 @@ class MypageActivity : AppCompatActivity() {
     lateinit var mycomment : ImageButton
     lateinit var sqlDB : SQLiteDatabase //SQLiteDatabase 클래스 변수
     lateinit var myHelper: myDBHelper //myDBHelper 클래스 변수
-
-    lateinit var writer : String //작성자 변수
     lateinit var login_id :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,16 +28,14 @@ class MypageActivity : AppCompatActivity() {
         mycomment = findViewById(R.id.mycomment)
 
         //'**님 안녕하세요'
-        var id = intent.getStringExtra("intent_userid")
-
-        writer = id.toString()
-        login_id = writer
+        val id = intent.getStringExtra("intent_userid")
+        login_id = id.toString()
 
         myHelper = myDBHelper(this)
         sqlDB = myHelper.readableDatabase
 
         var cursor : Cursor
-        cursor = sqlDB.rawQuery("SELECT * FROM memberDB WHERE memID='"+id.toString()+"';",null)
+        cursor = sqlDB.rawQuery("SELECT * FROM memberDB WHERE memID='"+login_id.toString()+"';",null)
 
         var name : String
 
@@ -55,7 +51,7 @@ class MypageActivity : AppCompatActivity() {
         val profile_change_click_me = findViewById(R.id.profile_change) as TextView
         profile_change_click_me.setOnClickListener {
             val intent = Intent(this,Change_Profile::class.java)
-            intent.putExtra("id",writer)
+            intent.putExtra("intent_userid", login_id)
             startActivity(intent)
         }
 
@@ -68,7 +64,7 @@ class MypageActivity : AppCompatActivity() {
             builder2.setPositiveButton(
                 "확인",
                 {dialogInterface:DialogInterface?, i:Int ->
-                    sqlDB.execSQL("DELETE FROM memberDB WHERE memID='"+writer+"';")
+                    sqlDB.execSQL("DELETE FROM memberDB WHERE memID='"+login_id+"';")
                     val intent = Intent(this,MainActivity::class.java)
                     startActivity(intent)
                 })
@@ -114,14 +110,14 @@ class MypageActivity : AppCompatActivity() {
         //내가 작성한 글
         mypost.setOnClickListener {
             val intent = Intent(this, Button_mytext::class.java)
-            intent.putExtra("text_writer",writer)
+            intent.putExtra("text_writer",login_id)
             startActivity(intent)
         }
 
         //내가 댓글단 글
         mycomment.setOnClickListener {
             val intent = Intent(this, Button_mycomment::class.java)
-            intent.putExtra("text_writer",writer)
+            intent.putExtra("text_writer",login_id)
             startActivity(intent)
         }
     }
@@ -136,9 +132,8 @@ class MypageActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.action_home ->{
-                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("intent_userid",id)
+                intent.putExtra("intent_userid",login_id)
                 startActivity(intent)
                 return true
             }

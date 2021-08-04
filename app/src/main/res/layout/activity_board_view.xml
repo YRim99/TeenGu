@@ -9,21 +9,32 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="3dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:text="아이디"
+            android:textColor="@color/loading_color" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="5dp"
+            android:text="제목"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -33,9 +44,10 @@
             android:layout_width="wrap_content"
             android:layout_height="180dp"
             android:layout_marginStart="38dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="38dp"
             android:maxLength="200"
+            android:text="내용"
             android:textSize="16sp" />
 
         <View
@@ -48,13 +60,11 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
-        android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/replyEdit"
+        app:layout_constraintBottom_toTopOf="@+id/reply_reg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -69,31 +79,31 @@
 
     <EditText
         android:id="@+id/replyEdit"
-        android:layout_width="400dp"
-        android:layout_height="56dp"
+        android:layout_width="408dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
         android:background="@drawable/edit_round"
         android:ems="10"
         android:hint="댓글을 입력하세요."
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/reply_reg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+        app:layout_constraintTop_toTopOf="@+id/reply_reg"
+        app:layout_constraintVertical_bias="1.0">
 
     </EditText>
 
     <ImageButton
         android:id="@+id/reply_reg"
-        android:layout_width="57dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="350dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="7dp"
+        android:layout_width="49dp"
+        android:layout_height="79dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_baseline_send_24"
-        app:layout_constraintBottom_toBottomOf="@+id/replyEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/replyEdit"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

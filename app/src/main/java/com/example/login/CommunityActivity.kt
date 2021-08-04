@@ -17,9 +17,8 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community)
 
-        var id = intent.getStringExtra("intent_userid") //주원 여기 추가했어
+        var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
 
         //프래그먼트 생성
         val mfragment: BoardFragment = BoardFragment()
@@ -48,6 +47,7 @@ class CommunityActivity : AppCompatActivity() {
         when(item?.itemId){
             R.id.action_home ->{
                 val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -64,7 +64,6 @@ class CommunityActivity : AppCompatActivity() {
             //마이페이지로 이동
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
-
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
