@@ -10,7 +10,7 @@ class DiaryDBHelper (context : Context) : SQLiteOpenHelper(context, "diaryDB", n
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {//테이블 삭제후 재생성
-        db!!.execSQL("DROP TABLE IF EXISTS user_diary")
+        db!!.execSQL("DROP TABLE IF EXISTS user_diary_test")
         onCreate(db)
     }
 
