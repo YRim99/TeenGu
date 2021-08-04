@@ -21,7 +21,6 @@ class teenguInfo : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teengu_info)
-        setTitle("정보")
 
         var id = intent.getStringExtra("intent_userid")
         login_id=id.toString()
@@ -53,6 +52,7 @@ class teenguInfo : AppCompatActivity()  {
         when(item?.itemId){
             R.id.action_home ->{
                 val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -60,7 +60,7 @@ class teenguInfo : AppCompatActivity()  {
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -70,7 +70,7 @@ class teenguInfo : AppCompatActivity()  {
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
 
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
