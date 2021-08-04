@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/border">
+    android:background="@drawable/border"
+    android:backgroundTint="@color/basic2">
 
 
     <LinearLayout
         android:id="@+id/LinearLayout1"
-        android:layout_width="270dp"
-        android:layout_height="67dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="380dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자유게시판"
+            android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -39,10 +41,10 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout2"
-        android:layout_width="270dp"
-        android:layout_height="67dp"
+        android:layout_width="380dp"
+        android:layout_height="65dp"
         android:layout_marginTop="22dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="질문게시판"
+            android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -69,10 +72,10 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout3"
-        android:layout_width="270dp"
-        android:layout_height="68dp"
+        android:layout_width="380dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="22dp"
-        android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="플리마켓"
+            android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -99,10 +103,10 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout4"
-        android:layout_width="270dp"
-        android:layout_height="68dp"
+        android:layout_width="380dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="22dp"
-        android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,6 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="홍보게시판"
+            android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
 

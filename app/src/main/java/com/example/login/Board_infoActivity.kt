@@ -57,6 +57,7 @@ class Board_infoActivity : AppCompatActivity() {
             save_content.text = strcontent
             save_content.maxLines = 1
             save_content.ellipsize = TextUtils.TruncateAt.END
+
             layout_item.addView(save_content)
 
 
