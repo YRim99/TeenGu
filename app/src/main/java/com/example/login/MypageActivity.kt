@@ -125,6 +125,7 @@ class MypageActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
     //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
@@ -138,16 +139,6 @@ class MypageActivity : AppCompatActivity() {
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("intent_userid", login_id)
-                startActivity(intent)
-
-                return true
-            }
-
-            //마이페이지로 이동
-            R.id.action_mypage -> {
-                val intent = Intent(this, MypageActivity::class.java)
-
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 

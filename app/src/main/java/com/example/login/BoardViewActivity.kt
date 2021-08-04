@@ -20,7 +20,6 @@ class BoardViewActivity : AppCompatActivity() {
     lateinit var content : TextView //게시글 내용
     lateinit var layout : LinearLayout //댓글 목록
     lateinit var reply : EditText
-    lateinit var login_id : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +35,6 @@ class BoardViewActivity : AppCompatActivity() {
         var intent_title = intent.getStringExtra("intent_title")
         var intent_content = intent.getStringExtra("intent_content")
 
-        login_id = intent_userid.toString()
 
         //게시글 보여주기
         title.text = intent_title
@@ -137,8 +135,9 @@ class BoardViewActivity : AppCompatActivity() {
             }
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
+                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("intent_userid", login_id)
+                intent.putExtra("intent_userid", id)
                 startActivity(intent)
 
                 return true
@@ -146,9 +145,9 @@ class BoardViewActivity : AppCompatActivity() {
 
             //마이페이지로 이동
             R.id.action_mypage -> {
+                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, MypageActivity::class.java)
-
-                intent.putExtra("intent_userid", login_id)
+                intent.putExtra("intent_userid", id)
                 startActivity(intent)
 
                 return true
