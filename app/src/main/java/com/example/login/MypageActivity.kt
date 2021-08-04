@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
@@ -32,6 +33,7 @@ class MypageActivity : AppCompatActivity() {
 
         //'**님 안녕하세요'
         val id = intent.getStringExtra("intent_userid")
+        Toast.makeText(applicationContext, id, Toast.LENGTH_SHORT).show()
         login_id = id.toString()
 
         myHelper = myDBHelper(this)
@@ -113,14 +115,14 @@ class MypageActivity : AppCompatActivity() {
         //내가 작성한 글
         mypost.setOnClickListener {
             val intent = Intent(this, Button_mytext::class.java)
-            intent.putExtra("text_writer",login_id)
+            intent.putExtra("intent_userid",login_id)
             startActivity(intent)
         }
 
         //내가 댓글단 글
         mycomment.setOnClickListener {
             val intent = Intent(this, Button_mycomment::class.java)
-            intent.putExtra("text_writer",login_id)
+            intent.putExtra("intent_userid",login_id)
             startActivity(intent)
         }
     }
