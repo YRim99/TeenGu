@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.*
 
 class reviewActivity : AppCompatActivity() {
@@ -66,6 +67,7 @@ class reviewActivity : AppCompatActivity() {
             var tvName: TextView = TextView(this)
             tvName.text = str_username
             tvName.textSize = 17F
+            tvName.setTextColor(Color.BLACK)
             layout_items.addView(tvName)
 
             var tvreview: TextView = TextView(this)

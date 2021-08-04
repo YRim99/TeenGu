@@ -46,16 +46,19 @@ class Button_mytext : AppCompatActivity() {
             //텍스트뷰가 들어있는 레이아웃 생성
             var layout_list:LinearLayout = LinearLayout(this)
             layout_list.orientation=LinearLayout.VERTICAL
-            layout_list.id=num
+            layout_list.setPadding(50,30,50,30)
+            layout_list.setBackgroundColor(Color.parseColor("#DCDCDC"))
+            layout_list.id = num
 
             var title:TextView = TextView(this)
             title.text=text_title
-            title.textSize = 30f
-            title.setBackgroundColor(Color.GREEN)
+            title.textSize = 20f
+            title.setTextColor(Color.BLACK)
             layout_list.addView(title)
 
             var content : TextView = TextView(this)
             content.text = text_content
+            content.textSize = 15f
             layout_list.addView(content)
 
             var boardname : TextView = TextView(this)

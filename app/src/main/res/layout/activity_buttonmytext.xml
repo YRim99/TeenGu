@@ -7,6 +7,18 @@
     android:orientation="vertical"
     tools:context=".Button_mytext">
 
+    <TextView
+        android:id="@+id/mycommentTv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:textColor="#040404"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="내가 쓴 글"
+        android:background="@color/loading_color"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
