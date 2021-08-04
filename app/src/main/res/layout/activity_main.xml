@@ -26,7 +26,8 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint = "@color/loading_color"/>
 
     <EditText
         android:id="@+id/edtPassword"
@@ -38,7 +39,8 @@
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtID" />
+        app:layout_constraintTop_toBottomOf="@+id/edtID"
+        android:backgroundTint = "@color/loading_color"/>
 
     <Button
         android:id="@+id/loginButton"

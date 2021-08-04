@@ -84,13 +84,17 @@ class reviewActivity : AppCompatActivity() {
 
         // 후기 작성
         regButton.setOnClickListener {
-            //사용자 이름 받아오기
             var str_review = reviewText?.text.toString()
 
             sqlitedb = dbManager.writableDatabase
             sqlitedb.execSQL("INSERT INTO review VALUES('$id', '$hosName', '$str_review');")
             Toast.makeText(applicationContext, "후기가 작성되었습니다.", Toast.LENGTH_SHORT).show()
             sqlitedb.close()
+
+            val intent = Intent(this, reviewActivity::class.java)
+            intent.putExtra("intent_userid",id)
+            intent.putExtra("hosName",hosName)
+            startActivity(intent)
         }
     }
 
