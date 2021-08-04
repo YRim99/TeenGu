@@ -104,7 +104,7 @@ class Board_qaActivity : AppCompatActivity() {
             //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
             R.id.action_chat ->{
                 val intent = Intent(this, ChatActivity::class.java)
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
@@ -114,7 +114,7 @@ class Board_qaActivity : AppCompatActivity() {
             R.id.action_mypage -> {
                 val intent = Intent(this, MypageActivity::class.java)
 
-                intent.putExtra("user_id", login_id)
+                intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
                 return true
