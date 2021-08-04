@@ -75,14 +75,10 @@ class teenguInfo : AppCompatActivity()  {
 
                 return true
             }
-
         }
-
 
         return super.onOptionsItemSelected(item)
     }
-
-
 }
 
 class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
