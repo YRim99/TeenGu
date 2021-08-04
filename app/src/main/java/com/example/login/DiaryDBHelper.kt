@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class DiaryDBHelper (context : Context) : SQLiteOpenHelper(context, "diaryDB", null, 1){
     override fun onCreate(db: SQLiteDatabase?) { //테이블 생성
-        db!!.execSQL("CREATE TABLE user_diary (num Integer PRIMARY KEY AUTOINCREMENT, date TEXT, userid CHAR(20), content VARCHAR(200));")
         db!!.execSQL("CREATE TABLE user_diary_test (date TEXT PRIMARY KEY, userid CHAR(20), content VARCHAR(200));")
     }
 
