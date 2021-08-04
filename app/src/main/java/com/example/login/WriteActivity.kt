@@ -23,6 +23,9 @@ class WriteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         var id = intent.getStringExtra("intent_userid")
         var tableName = intent.getStringExtra("intent_table_name")
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
@@ -106,7 +109,16 @@ class WriteActivity : AppCompatActivity() {
 
                 return true
             }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

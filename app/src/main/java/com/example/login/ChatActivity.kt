@@ -25,10 +25,12 @@ class ChatActivity: AppCompatActivity() {
     lateinit var chat_user : String
     var reference : DatabaseReference = FirebaseDatabase.getInstance().getReference().child("message")
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         lv_chating = findViewById<ListView>(R.id.lv_chating)
         btn_send = findViewById<ImageButton>(R.id.btn_send)
@@ -124,6 +126,11 @@ class ChatActivity: AppCompatActivity() {
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
         }
