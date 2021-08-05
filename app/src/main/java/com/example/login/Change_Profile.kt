@@ -1,5 +1,6 @@
 package com.example.login
 //회원정보 변경 화면
+
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -121,5 +122,3 @@ class Change_Profile : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
-
-
