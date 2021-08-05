@@ -1,5 +1,5 @@
 package com.example.login
-
+// 산부인과 후기 저장 데이터베이스
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
