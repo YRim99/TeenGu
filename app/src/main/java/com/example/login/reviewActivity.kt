@@ -1,5 +1,5 @@
 package com.example.login
-
+// 홈 -> 산부인과 -> 지도 마커 클릭 -> 후기 클릭(산부인과 후기)
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase

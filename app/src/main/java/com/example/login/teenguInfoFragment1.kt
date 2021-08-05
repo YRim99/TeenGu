@@ -1,5 +1,5 @@
 package com.example.login
-
+// 홈 -> 정보 -> 지원제도 화면
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle

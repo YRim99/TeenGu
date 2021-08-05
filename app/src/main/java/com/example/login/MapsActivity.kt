@@ -1,5 +1,5 @@
 package com.example.login
-
+// 홈 -> 산부인과 화면(산부인과 지도)
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -33,7 +33,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var login_id : String
 
     lateinit var hosName : String
-    //lateinit var toolbar : Toolbar
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -41,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         sqlitedb = dbManager.readableDatabase
         maps_view = findViewById(R.id.maps_view)
 
+        // db에 노원구 공릉동 주변 일부 산부인과만 저장했음(db 이름 : map)
         var cursor: Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM Nowon;", null)
 
@@ -121,12 +121,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        //toolbar = findViewById(R.id.toolbar)
-        //setSupportActionBar(toolbar)
-
-        // 뒤로가기 버튼
-        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         // 어플이 사용되는 동안 화면 끄지 않기
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
@@ -136,7 +130,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         review = findViewById<ImageButton>(R.id.review)
 
         // 아이디 받아오기
-        val id = intent.getStringExtra("intent_userid")
+        var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
 
         review.setOnClickListener {
@@ -153,15 +147,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return true
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
-
-
             //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
             R.id.action_home ->{
+                var id = intent.getStringExtra("intent_userid")
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("intent_userid",login_id)
+                intent.putExtra("intent_userid", id)
                 startActivity(intent)
 
                 return true

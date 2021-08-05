@@ -1,5 +1,5 @@
 package com.example.login
-
+// 홈 -> 정보 화면(정보 제공) : TabLayout 사용
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
