@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import android.widget.Toast
 
 class Button_mytextinfo : AppCompatActivity() {
 
@@ -33,11 +32,8 @@ class Button_mytextinfo : AppCompatActivity() {
         btn_content = findViewById(R.id.btn_content)
 
         var intent_userid = intent.getStringExtra("intent_userid").toString()
-        Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
         var text_title = intent.getStringExtra("title").toString()
-        Toast.makeText(applicationContext, text_title, Toast.LENGTH_LONG).show()
         var text_content = intent.getStringExtra("content").toString()
-        Toast.makeText(applicationContext, text_content, Toast.LENGTH_LONG).show()
 
         btn_title.text = text_title
         btn_content.text = text_content

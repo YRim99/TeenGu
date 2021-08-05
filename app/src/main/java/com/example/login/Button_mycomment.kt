@@ -29,7 +29,6 @@ class Button_mycomment : AppCompatActivity() {
 
         val intent = intent
         var intent_userid = intent.getStringExtra("intent_userid").toString()
-        Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
         layout = findViewById(R.id.personnel_reply)
 
         replyDBHelper = replyDBHelper(this)

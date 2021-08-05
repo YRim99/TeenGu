@@ -10,7 +10,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 
 class Button_mytext : AppCompatActivity() {
 
@@ -30,7 +29,6 @@ class Button_mytext : AppCompatActivity() {
         val intent = intent
         var intent_userid = intent.getStringExtra("intent_userid").toString()
         login_id = intent_userid
-        Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
         layout = findViewById(R.id.personnel_text)
 
         communityDBHelper = communityDBHelper(this)
@@ -118,6 +116,7 @@ class Button_mytext : AppCompatActivity() {
                 intent.putExtra("title", text_title)
                 intent.putExtra("content", text_content)
                 intent.putExtra("boardname", text_board)
+                intent.putExtra("intent_userid", intent_userid)
                 startActivity(intent)
             }
 
@@ -161,6 +160,7 @@ class Button_mytext : AppCompatActivity() {
                 intent.putExtra("title", text_title)
                 intent.putExtra("content", text_content)
                 intent.putExtra("boardname", text_board)
+                intent.putExtra("intent_userid", intent_userid)
                 startActivity(intent)
             }
 
@@ -204,6 +204,7 @@ class Button_mytext : AppCompatActivity() {
                 intent.putExtra("title", text_title)
                 intent.putExtra("content", text_content)
                 intent.putExtra("boardname", text_board)
+                intent.putExtra("intent_userid", intent_userid)
                 startActivity(intent)
             }
 

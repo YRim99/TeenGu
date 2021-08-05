@@ -42,7 +42,6 @@ class Button_mycommentinfo : AppCompatActivity() {
 
         while(cursor.moveToNext()) {
             var reply_text_content = cursor.getString(cursor.getColumnIndex("reply")).toString()
-            Toast.makeText(applicationContext, reply_text_content, Toast.LENGTH_LONG).show()
             reply_content.text = reply_text_content
         }
     }
