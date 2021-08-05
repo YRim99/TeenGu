@@ -12,7 +12,6 @@ class DBManager(
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
 
-        //db!!.execSQL("CREATE TABLE Nowon (name text, field text, location text, call INTEGER, lat INTEGER, lng INTEGER)")
         db!!.execSQL("CREATE TABLE review (username text, hosName text, userRev text)")
 
     }
