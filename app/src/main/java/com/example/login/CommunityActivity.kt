@@ -27,8 +27,6 @@ class CommunityActivity : AppCompatActivity() {
         //액티비티에 넣을 <프래그먼트>와 <넣을 위치>를 트랜잭션에 추가
         transaction.add(R.id.frameLayout, mfragment)
 
-
-        //주원 이 문단 추가했어
         val bundle = Bundle()
         bundle.putString("intent_userid",id) //HomeActivity에서 넘어온 userid 값을 BoardFragment에 전달
         mfragment.arguments = bundle //fragment의 arguments에 데이터를 담은 bundle을 넘겨줌
