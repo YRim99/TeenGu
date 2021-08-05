@@ -1,5 +1,5 @@
 package com.example.login
-
+//댓글 단 글 목록 보여주는 화면
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase

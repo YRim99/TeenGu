@@ -1,5 +1,5 @@
 package com.example.login
-
+//채팅 화면
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
-import java.util.*
 import kotlin.collections.HashMap
 
 
@@ -37,7 +36,6 @@ class ChatActivity: AppCompatActivity() {
         et_msg = findViewById<EditText>(R.id.et_msg)
 
         login_id = intent.getStringExtra("intent_userid").toString()
-        Toast.makeText(this, login_id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
 
         arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1)
         lv_chating.adapter = arrayAdapter

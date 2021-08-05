@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.Toast
 
 class HomeActivity : AppCompatActivity() {
     lateinit var btnCommunity : Button
@@ -92,13 +91,7 @@ class HomeActivity : AppCompatActivity() {
 
                 return true
             }
-
         }
-
-
         return super.onOptionsItemSelected(item)
     }
-
-
-
 }

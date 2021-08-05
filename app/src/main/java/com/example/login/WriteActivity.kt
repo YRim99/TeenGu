@@ -27,7 +27,6 @@ class WriteActivity : AppCompatActivity() {
 
         var id = intent.getStringExtra("intent_userid")
         var tableName = intent.getStringExtra("intent_table_name")
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
 
         login_id = id.toString()
 

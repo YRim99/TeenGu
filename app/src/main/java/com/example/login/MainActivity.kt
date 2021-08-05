@@ -1,21 +1,14 @@
 package com.example.login
 //로그인 화면
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Button
-import android.widget.CursorAdapter
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     lateinit var myHelper: myDBHelper //myDBHelper 클래스 변수

@@ -12,7 +12,6 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 
 class Board_marketActivity : AppCompatActivity() {
     lateinit var myHelper: communityDBHelper //communityDBHelper 클래스 변수
@@ -30,7 +29,6 @@ class Board_marketActivity : AppCompatActivity() {
 
         var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
 
         myHelper = communityDBHelper(this)
         sqlDB = myHelper.readableDatabase
@@ -51,13 +49,13 @@ class Board_marketActivity : AppCompatActivity() {
             layout_item.setBackgroundColor(Color.parseColor("#DCDCDC"))
 
             var save_title : TextView = TextView(this)
-            save_title.textSize = 25F
+            save_title.textSize = 20f
             save_title.text = strtitle
             save_title.setTextColor(Color.BLACK)
             layout_item.addView(save_title)
 
             var save_content : TextView = TextView(this)
-            save_content.textSize = 15F
+            save_content.textSize = 15f
             save_content.text = strcontent
             save_content.maxLines = 1
             save_content.ellipsize = TextUtils.TruncateAt.END

@@ -1,5 +1,5 @@
 package com.example.login
-
+//내가 단 댓글 상세보기 화면
 import android.content.Intent
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity

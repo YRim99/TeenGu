@@ -48,19 +48,16 @@ class BoardFragment : Fragment() {
         LinearLayout3.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, Board_marketActivity::class.java)
-                intent.putExtra("intent_userid",id) //주원 여기 추가했어
+                intent.putExtra("intent_userid",id)
                 startActivity(intent)
             }
         }
         LinearLayout4.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, Board_adActivity::class.java)
-                intent.putExtra("intent_userid",id) //주원 여기 추가했어
+                intent.putExtra("intent_userid",id)
                 startActivity(intent)
             }
         }
     }
-
-    //위에 상단 메뉴바
-
 }
