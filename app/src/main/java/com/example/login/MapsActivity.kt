@@ -1,5 +1,5 @@
 package com.example.login
-
+// 홈 -> 산부인과 화면(산부인과 지도)
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
