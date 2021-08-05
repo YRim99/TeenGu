@@ -8,9 +8,14 @@
     tools:context=".PInfo">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,13 +28,13 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:text="1. 개인정보 처리방침"
+                android:textSize="18dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textSize="18dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/first"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
@@ -39,28 +44,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2. 수집하는 개인정보의 항목"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:textSize="18dp"/>
+                android:text="2. 수집하는 개인정보의 항목"
+                android:textSize="18dp" />
+
             <TextView
                 android:id="@+id/second"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:text="second" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3. 수집한 개인정보의 이용"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:textSize="18dp"/>
+                android:text="3. 수집한 개인정보의 이용"
+                android:textSize="18dp" />
+
             <TextView
                 android:id="@+id/third"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
