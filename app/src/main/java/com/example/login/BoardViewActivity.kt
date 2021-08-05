@@ -26,6 +26,9 @@ class BoardViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_view)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         id = findViewById(R.id.id)
         title = findViewById(R.id.title)
         content = findViewById(R.id.content)
@@ -153,6 +156,11 @@ class BoardViewActivity : AppCompatActivity() {
                 intent.putExtra("intent_userid", id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
         }

@@ -81,7 +81,6 @@ class MypageActivity : AppCompatActivity() {
 
         }
 
-
         //로그아웃
         val logout_click_me = findViewById(R.id.logout) as TextView
         logout_click_me.setOnClickListener {

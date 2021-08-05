@@ -7,6 +7,8 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -17,14 +19,19 @@ class Button_mytext : AppCompatActivity() {
     lateinit var sqlDB : SQLiteDatabase //SQLiteDatabase 클래스 변수
     lateinit var communityDBHelper: communityDBHelper
     lateinit var layout: LinearLayout
+    lateinit var login_id :String // 로그인 아이디
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buttonmytext)
         setTitle("내가 쓴 글 목록")
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val intent = intent
         var intent_userid = intent.getStringExtra("intent_userid").toString()
+        login_id = intent_userid
         Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
         layout = findViewById(R.id.personnel_text)
 
@@ -209,9 +216,38 @@ class Button_mytext : AppCompatActivity() {
         cursor.close()
         sqlDB.close()
         communityDBHelper.close()
+    }
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mypage, menu)
+        return true
+    }
 
+    //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_home ->{
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid",login_id)
+                startActivity(intent)
+                return true
+            }
 
+            //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
+            R.id.action_chat ->{
+                val intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("intent_userid", login_id)
+                startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
 

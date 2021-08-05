@@ -116,8 +116,4 @@ class WriteActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
 }

@@ -27,7 +27,6 @@
         <activity
             android:name=".reviewActivity"
             android:exported="true"
-            android:parentActivityName=".MapsActivity"
             android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -42,43 +41,28 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:parentActivityName=".HomeActivity" />
-        <activity android:name=".teenguInfo"
-            android:parentActivityName=".HomeActivity"/>
-        <activity android:name=".CalendarActivity"
-            android:parentActivityName=".HomeActivity"/>
-        <activity android:name=".Button_mycommentinfo"
-            android:parentActivityName=".Button_mycomment"/>
+            android:name=".MapsActivity" />
+        <activity android:name=".teenguInfo" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".Button_mycommentinfo" />
         <activity
             android:name=".BoardViewActivity"
-            android:parentActivityName=".CommunityActivity"
             android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan" />
-        <activity android:name=".Change_Profile"
-            android:parentActivityName=".MypageActivity"/>
-        <activity android:name=".PInfo"
-            android:parentActivityName=".MypageActivity"/>
-        <activity android:name=".Button_mycomment"
-            android:parentActivityName=".MypageActivity"/>
-        <activity android:name=".Button_mytextinfo"
-            android:parentActivityName=".Button_mytext"/>
-        <activity android:name=".Button_mytext"
-            android:parentActivityName=".MypageActivity"/>
+        <activity android:name=".Change_Profile" />
+        <activity android:name=".PInfo" />
+        <activity android:name=".Button_mycomment" />
+        <activity android:name=".Button_mytextinfo" />
+        <activity android:name=".Button_mytext" />
         <activity
             android:name=".ChatActivity"
             android:windowSoftInputMode="stateHidden|adjustUnspecified|adjustPan" />
         <activity android:name=".MypageActivity" />
         <activity android:name=".WriteActivity" />
-        <activity android:name=".Board_marketActivity"
-            android:parentActivityName=".CommunityActivity"/>
-        <activity android:name=".Board_adActivity"
-            android:parentActivityName=".CommunityActivity"/>
-        <activity android:name=".Board_qaActivity"
-            android:parentActivityName=".CommunityActivity"/>
-        <activity android:name=".Board_infoActivity"
-            android:parentActivityName=".CommunityActivity"/>
-        <activity android:name=".CommunityActivity"
-            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".Board_marketActivity" />
+        <activity android:name=".Board_adActivity" />
+        <activity android:name=".Board_qaActivity" />
+        <activity android:name=".Board_infoActivity" />
+        <activity android:name=".CommunityActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".JoinActivity"
             android:parentActivityName=".MainActivity"/>

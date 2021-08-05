@@ -25,6 +25,9 @@ class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         var calendarView : CalendarView = findViewById(R.id.calendarView) //달력
         var contentEditText : EditText = findViewById(R.id.contentEditText) //입력창
         var doneFab : FloatingActionButton = findViewById(R.id.doneFab) //저장버튼
@@ -149,6 +152,11 @@ class CalendarActivity : AppCompatActivity() {
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
         }

@@ -25,6 +25,9 @@ class Board_infoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_info)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
         Toast.makeText(this, id, Toast.LENGTH_SHORT).show() //값 잘 넘어오는지 테스트하는거, 나중에 지우기
@@ -119,6 +122,11 @@ class Board_infoActivity : AppCompatActivity() {
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
         }

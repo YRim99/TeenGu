@@ -5,6 +5,8 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -19,10 +21,14 @@ class Change_Profile : AppCompatActivity() {
     lateinit var change_finish : Button  //모두 변경완료 -> 클릭시 MainActivity로 이동
     lateinit var new_pwd : EditText     // 새로운 비밀번호 입력
     lateinit var new_nickname : EditText  //새로운 별명 입력
+    lateinit var login_id :String // 로그인 아이디
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_profile)
+
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setTitle("회원정보 수정")
 
@@ -33,6 +39,7 @@ class Change_Profile : AppCompatActivity() {
         new_nickname = findViewById(R.id.new_nickname)
 
         var id = intent.getStringExtra("intent_userid")   //현재 id값 받아오기 위해 필요
+        login_id = id.toString()
 
         myHelper = myDBHelper(this)
         sqlDB = myHelper.readableDatabase
@@ -80,11 +87,38 @@ class Change_Profile : AppCompatActivity() {
             intent.putExtra("intent_userid", id)
             startActivity(intent)
         }
+    }
+    //홈화면에 쓰일 메뉴 리소스 지정
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mypage, menu)
+        return true
+    }
 
+    //우측 상단 홈 메뉴 누를 시 HomeActivity로 이동
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.action_home ->{
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("intent_userid",login_id)
+                startActivity(intent)
+                return true
+            }
 
+            //우측 상단 채팅 메뉴 누를시 ChatActivity로 이동
+            R.id.action_chat ->{
+                val intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("intent_userid", login_id)
+                startActivity(intent)
 
-
-
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
 

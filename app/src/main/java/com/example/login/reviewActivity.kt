@@ -26,6 +26,9 @@ class reviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review2)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         dbManager = DBManager(this, "map", null, 1)
 
         username = findViewById(R.id.username)
@@ -131,7 +134,11 @@ class reviewActivity : AppCompatActivity() {
 
                 return true
             }
-
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

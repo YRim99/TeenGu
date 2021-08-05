@@ -17,6 +17,9 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community)
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         var id = intent.getStringExtra("intent_userid")
         login_id = id.toString()
 
@@ -67,6 +70,12 @@ class CommunityActivity : AppCompatActivity() {
 
                 return true
             }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+
         }
 
         return super.onOptionsItemSelected(item)

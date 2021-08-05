@@ -24,6 +24,9 @@ class Button_mycomment : AppCompatActivity() {
         setContentView(R.layout.activity_button_mycomment)
         setTitle("댓글 남긴 글 목록")
 
+        // 뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val intent = intent
         var intent_userid = intent.getStringExtra("intent_userid").toString()
         Toast.makeText(applicationContext, intent_userid, Toast.LENGTH_SHORT).show()
@@ -114,6 +117,11 @@ class Button_mycomment : AppCompatActivity() {
                 intent.putExtra("intent_userid", login_id)
                 startActivity(intent)
 
+                return true
+            }
+            // 이전 페이지로 이동
+            android.R.id.home -> {
+                finish()
                 return true
             }
 
