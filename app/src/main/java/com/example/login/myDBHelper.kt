@@ -1,5 +1,5 @@
 package com.example.login
-
+//회원 정보를 담고있는 memberDB를 관리
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper

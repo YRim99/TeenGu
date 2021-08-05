@@ -1,5 +1,5 @@
 package com.example.login
-
+//'캘린더'에서 입력한 정보를 담고있는 diaryDB를 관리
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper

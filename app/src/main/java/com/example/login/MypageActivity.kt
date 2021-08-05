@@ -33,7 +33,6 @@ class MypageActivity : AppCompatActivity() {
 
         //'**님 안녕하세요'
         val id = intent.getStringExtra("intent_userid")
-        Toast.makeText(applicationContext, id, Toast.LENGTH_SHORT).show()
         login_id = id.toString()
 
         myHelper = myDBHelper(this)

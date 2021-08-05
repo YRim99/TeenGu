@@ -1,5 +1,5 @@
 package com.example.login
-
+//게시글의 내용과 댓글을 볼 수 있는 화면
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase

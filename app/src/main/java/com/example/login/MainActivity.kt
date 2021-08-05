@@ -1,5 +1,5 @@
 package com.example.login
-
+//로그인 화면
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent

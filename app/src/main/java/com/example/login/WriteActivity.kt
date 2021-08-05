@@ -1,5 +1,5 @@
 package com.example.login
-
+//글쓰기 화면
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,6 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-
 
 class WriteActivity : AppCompatActivity() {
     var isExistBlank = false //빈칸이 있는지 확인

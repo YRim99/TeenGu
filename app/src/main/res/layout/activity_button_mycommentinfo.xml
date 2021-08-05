@@ -13,7 +13,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginTop="30dp"
         android:background="@color/loading_color">
 
@@ -35,20 +35,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="글 제목"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/btn_reply_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_marginLeft="5sp"/>
             </LinearLayout>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_marginBottom="3dp"
@@ -64,16 +64,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="댓글 내용"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/btn_reply_content"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
                     android:layout_weight="1"
                     android:layout_marginLeft="5sp"
                     android:text="(내용)"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
             </LinearLayout>
         </TableRow>
 

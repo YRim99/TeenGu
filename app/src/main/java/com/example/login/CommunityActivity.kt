@@ -1,5 +1,5 @@
 package com.example.login
-
+//'커뮤니티' 클릭 시 보여지는 화면
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity

@@ -1,5 +1,5 @@
 package com.example.login
-
+//CommunityActivity 내에서 게시판목록을 보여주는 프래그먼트
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -22,7 +22,7 @@ class BoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val id = arguments?.getString("intent_userid")//주원 여기 추가했어
+        val id = arguments?.getString("intent_userid")
 
         LinearLayout1 = view.findViewById(R.id.LinearLayout1)
         LinearLayout2 = view.findViewById(R.id.LinearLayout2)
@@ -34,14 +34,14 @@ class BoardFragment : Fragment() {
         LinearLayout1.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, Board_infoActivity::class.java)
-                intent.putExtra("intent_userid",id) //주원 여기 추가했어
+                intent.putExtra("intent_userid",id)
                 startActivity(intent)
             }
         }
         LinearLayout2.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, Board_qaActivity::class.java)
-                intent.putExtra("intent_userid",id) //주원 여기 추가했어
+                intent.putExtra("intent_userid",id)
                 startActivity(intent)
             }
         }
